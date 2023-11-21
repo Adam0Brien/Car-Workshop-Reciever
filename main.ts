@@ -13,6 +13,8 @@ radio.onReceivedValue(function (name, value) {
     } else if (name == "left") {
         motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, speed)
         motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, speed)
+    } else if (name == "beep") {
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.InBackground)
     }
 })
 let speed = 0
